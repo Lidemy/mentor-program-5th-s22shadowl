@@ -23,3 +23,6 @@
 * 最後，你可以用電腦的 GUI 介面打開資料夾確認一下操作有沒有成功。
 
 CLI 的教學就到這邊，先這樣啦，ㄅㄅ
+
+參考資料：
+[CLI 常用指令整理 by MoreCoke]https://zh-tw.coderbridge.com/@MoreCoke/31ccfbee5ba042dda149e088ef7398ba
