@@ -10,9 +10,9 @@ function solve(lines) {
       winner = 'DRAW'
     } else if (compare(A, B, K)) {
       winner = 'A'
+    } else {
+      winner = 'B'
     }
-    winner = 'B'
-
     console.log(winner)
   }
   function compare(a, b, k) {
@@ -37,4 +37,4 @@ function solve(lines) {
     }
   }
 }
-solve()
+solve(['3', '1 2 1', '1 2 -1', '2 2 1'])

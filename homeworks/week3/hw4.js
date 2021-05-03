@@ -1,11 +1,11 @@
 function solve(lines) {
-  const input = lines[0]
-  let output = ''
-  for (let i = input.length - 1; i >= 0; i--) {
-    output += input[i]
+  const originStr = lines[0]
+  let reverseStr = ''
+  for (let i = originStr.length - 1; i >= 0; i--) {
+    reverseStr += originStr[i]
   }
 
-  if (input === output) {
+  if (originStr === reverseStr) {
     console.log('True')
   } else {
     console.log('False')
