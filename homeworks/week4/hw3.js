@@ -1,18 +1,22 @@
-/* eslint-disable prefer-template */
 const keyword = process.argv[2]
 const got = require('got');
 
 (async() => {
   try {
-    const response = await got('https://restcountries.eu/rest/v2/name/' + keyword)
+    const response = await got(`https://restcountries.eu/rest/v2/name/${keyword}`)
     if (response.statusCode >= 200 && response.statusCode < 300) {
-      const nationINF = JSON.parse(response.body)
+      let nationINF = []
+      try {
+        nationINF = JSON.parse(response.body)
+      } catch (err) {
+        console.log('資料庫讀取錯誤！')
+      }
       for (let i = 0; i < nationINF.length; i++) {
         console.log('=======')
-        console.log('國家：' + nationINF[i].name)
-        console.log('首都：' + nationINF[i].capital)
-        console.log('貨幣：' + nationINF[i].currencies[0].code)
-        console.log('國碼：' + nationINF[i].callingCodes[0])
+        console.log(`國家：${nationINF[i].name}`)
+        console.log(`首都：${nationINF[i].capital}`)
+        console.log(`貨幣：${nationINF[i].currencies[0].code}`)
+        console.log(`國碼：${nationINF[i].callingCodes[0]}`)
       }
     }
   } catch (error) {
