@@ -11,7 +11,7 @@ const got = require('got');
         try {
           bookForm = JSON.parse(response.body)
         } catch (err) {
-          console.log('資料庫格式錯誤！')
+          console.log('資料格式錯誤！')
           console.log(err)
         }
         for (let i = 0; i < bookForm.length; i++) {
