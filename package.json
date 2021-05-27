@@ -21,7 +21,11 @@
   },
   "homepage": "https://github.com/Lidemy/mentor-program-5th#readme",
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
     "@lidemy/eslint-config-lidemy": "^1.0.0",
+    "babel-cli": "^6.26.0",
     "eslint": "^7.23.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
