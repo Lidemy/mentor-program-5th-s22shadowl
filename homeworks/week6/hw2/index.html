@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>新拖延運動報名表單</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'> 
+  <link rel='stylesheet' herf='https://necolas.github.io/normalize.css/8.0.1/normalize.css' />
+
+  <style>
+    body {
+        background: whitesmoke;
+        font-family:Microsoft JhengHei;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    .form {
+        font-size: 14px;
+        border-top: solid 8px gold;
+        border-radius: 5px;
+        background: white;
+        position: relative;
+        width: 645px;
+        margin:5% auto 2.5% auto;
+        padding: 40px;
+        box-shadow: 1.8px 2.4px 5px 0 #97a2a0;
+    }
+    .footer {
+        background: #000000;
+        padding: 12px;
+        text-align: center;
+        color:#999999;
+        font-size: 13px;
+      }
+    .time_location {
+        line-height: 1.5em;
+        padding-bottom: 22px;
+      }
+    .title {
+        font-size: 20px;
+        padding: 20px 0px 20px 0px;
+    }
+    .title:after {
+        content: ' *';
+        color: #e74149; 
+    }
+    #other:after {
+        content: '';
+    }
+    #other {
+        padding-bottom: 12px;
+    }
+    .hint {
+        font-size: 16px;
+        color:#e74149;
+        padding-bottom: 35px;
+    }
+    .button {
+          position: relative;
+          margin-top: 35px;
+          margin-bottom: 20px;
+          padding: 12px 30px 12px 30px;
+          font-size: 15px;
+          background:gold;
+          display: inline-block;
+          border-radius:3px ;
+          transition: color 0.1s;
+      }
+      .button div {
+          position:relative;
+          z-index: 10;
+      }
+    .button:hover:after {
+        content: '';
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .input {
+        width:287px;
+        font-size:16px;
+        margin-bottom: 30px;
+        border: #d0d0d0 solid 1px;  
+    }
+    .input:nth-last-child(1) {
+        margin-top:24px
+    }
+    .join_type  {
+        margin-bottom: 22px;
+    }
+
+    @media (max-width: 768px) {
+        .form {
+            width:auto;
+            margin: 10px;
+        }
+    }
+  </style>
+
+</head>
+<script src="js/scripts.js"></script>
+
+<body>
+    <div class='form'>
+    <h1>新拖延運動報名表單</h1>
+    <div class='time_location'>
+        活動日期：2020/12/10 ~ 2020/12/11
+    <br>
+    活動地點：台北市大安區新生南路二段1號
+</div>
+    <div class='hint'>*必填</div>
+    <div class='block_form'>
+    <div class='title'>暱稱</div>
+    <input type='text' class='input' name='name' placeholder='您的回答'>
+    <div class='title'>電子郵件</div>
+    <input type='text' class='input' name='email' placeholder='您的電子郵件'>
+    <div class='title'>手機號碼</div>
+    <input type='text' class='input' name='number' placeholder='您的手機號碼'>
+    <div class='title'>報名類型</div>
+    <div><label><input type='radio' class='join_type' name="join_type" value='bed'>
+    躺在床上用想像力實作</label></div>
+    <div><label><input type='radio' class='join_type' name="join_type" value='floor'>
+    趴在地上滑手機找現成的</label></div>
+    <div class='title'>怎麼知道這個活動的？</div> 
+    <input type='text' class='input' name='reason' placeholder='您的回答'>
+    <div class='title' id='other'>其他</div>
+    <div>對活動的一些建議</div> 
+    <input type='text' class='input' name='else' placeholder='您的回答'>
+    
+    
+    </div>
+    <div class='button'>
+        提交
+    </div>
+    <div>請勿透過表單送出您的密碼。</div>
+    </div>
+    <footer>
+    <div class='footer'>
+        © 2020 © Copyright. All rights Reserved.
+    </div>
+    </footer>
+</body>
+</html>
