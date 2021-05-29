@@ -11,6 +11,7 @@
   <style>
       body {
         font-family:Microsoft JhengHei;
+        margin: 0;
       }
       .navbar {
         box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
@@ -123,8 +124,8 @@
           background: #a8e8e1;
       }
       .btn-query {
-          margin-left: 23px;
           background: #f9f9b5;
+          margin: 24px;
       }
       .section__images {
           display: flex;
@@ -167,23 +168,28 @@
           color: white;
           font-size: 16px;
       }
-      .command__boxes {
+      .commands {
+          position: relative;
           text-align:center;
           justify-content: space-around;
           display: flex;
+          margin-top: 50px;
       }
-      .command__boxes .command__images{
+      .commands .command__boxes{
+          display: inline-block;
+          padding: 8px;
           box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
           border-style:solid;
           border-width:1px;
           border-color:#c7e5ec;
+          border-radius: 5px;
           margin: 0px 8px 0px 8px;
           flex-basis: 33.333333%;
       }
 
-      .command__boxes .command__images img , .command__boxes .command__images div {
-          position: relative;
-          top:-25%;
+      .command__boxes img {
+          position: absolute;
+          transform: translate(-50%,-60%);
       }
 
       .command__texts {
@@ -193,6 +199,7 @@
           line-height: 2em;
           text-align:center;
           padding: 0px 20px 0px 20px;
+          margin-top: 45px;
       }
       @media (max-width: 768px) {
        .navbar .wrapper {
@@ -218,9 +225,12 @@
        .btn-query {
           margin-top: 16px;
           margin-left: 0;
+          margin-right: 0;
       }
         .section {
             margin-bottom: 0px;
+            margin-left: 20px;
+            margin-right: 20px;
         }
         .section__images {
             flex-direction: column;
@@ -235,22 +245,26 @@
             margin-right: 0;
             margin-top: 16px;
         }
-        .command__boxes {
+        .commands {
             flex-direction: column;
         }
+        .commands .command__boxes + .command__boxes{
+            margin-top: 10px;
+        }
         
-        .command__boxes .command_images img , .command__boxes .command__images div {
+        .commands .command_boxes img , .commands .command__boxes div {
           position: relative;
           top:-25%;
       }
         .command__texts {
           padding: 0px 20px 20px 20px;
+          margin-top: 65px;
 
       }
-        .command__boxes .command__images{
+        .commands .command__images{
           margin: 10px;
         }
-        .command__images img {
+        .command__boxes img {
           margin-top:20px;  
           border: #c7e5ec solid 3px;
           border-radius: 50%;
@@ -320,23 +334,23 @@
             <h2 class='section__title'>
                 吃過都說好
             </h2>
-        </div>
-        <div class='command__boxes'>        
-            <div class='command__images'><img src='p-1.png' />
+        
+        <div class='commands'>        
+            <div class='command__boxes'><img src='p-1.png' />
             
             <div class='command__texts'>國父桑<br>我一生疲於建國，去過日本，去過歐洲，卻從未到過台北101，也從來沒有吃過這麼好吃的東西...今天在時空旅行者的幫助下我終於吃到了...此生再無遺憾 QAQ!!</div>
             </div>
-            <div class='command__images'><img src='p-2.png' />
+            <div class='command__boxes'><img src='p-2.png' />
             
             <div class='command__texts'>可達鴨<br>三雙鞋等於30，兩個人加一雙鞋等於20，一雙冰淇淋加一雙冰淇淋加一個人等於13，那$#%$#%^%$^##$%等於多少...唉，大概咬一口就知道了!!!</div>
             </div>
-            <div class='command__images'><img src='p-3.png' />
+            <div class='command__boxes'><img src='p-3.png' />
                
             <div class='command__texts'>旅行蛙<br>自從呱呱呱呱呱以後，我呱呱呱呱呱，非常感謝呱呱呱呱呱，下次呱呱呱呱呱我呱呱呱呱呱，一定呱呱呱呱呱!!!</div>
             </div>
         </div>
     </div>
-        
+    </div>    
         </section>
     </div>
     <div class='wrapper'>
