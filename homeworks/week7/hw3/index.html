@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>TO DO LIST</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'> 
+  <link rel='stylesheet' herf='https://necolas.github.io/normalize.css/8.0.1/normalize.css' />
+
+    <style type='text/css'>
+        @import url(style.css);
+    </style>
+</head>
+<body>
+    <div class='todo'>
+        <div class='title'>
+            <h1>TO DO LIST</h1>
+        </div>
+        <div class='rule'>
+            說明：<br>輸入備忘後，點擊「+」按鈕即可新增備忘。<br>點擊新增的備忘可將其標示為已完成<br>點擊備忘上方的「X」按鈕可將其刪除
+            <div class='todo__now'></div>
+        </div>
+        <div class='todo__box'>
+            <button type='button' id='input__button' class='button'>
+                <icon id='add__icon'>+</icon>
+                <input type='text' name='add__inputbox' id='add__inputbox' placeholder='Add Some Todo!'>
+            </button>
+        </div>
+    </div>
+    <script src='script.js'>
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+ㄈ<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>新拖延運動報名表單</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'> 
+  <link rel='stylesheet' herf='https://necolas.github.io/normalize.css/8.0.1/normalize.css' />
+
+  <style type='text/css'>
+    @import url(style.css);
+  </style>
+</head>
+
+<body>
+    <div class='form'>
+        <h1>新拖延運動報名表單</h1>
+        <div class='time__location'>
+            活動日期：2020/12/10 ~ 2020/12/11
+            <br>
+            活動地點：台北市大安區新生南路二段1號
+        </div>
+        <div class='hint'>*必填</div>
+        <form>
+            <div class='title'>暱稱</div>
+            <input type='text' class='input' name='name' placeholder='您的回答'>
+            <p id='alert__name'></p>
+            <div class='title'>電子郵件</div>
+            <input type='text' class='input' name='email' placeholder='您的電子郵件'>
+            <p id='alert__email'></p>
+            <div class='title'>手機號碼</div>
+            <input type='text' class='input' name='number' placeholder='您的手機號碼'>
+            <p id='alert__number'></p>
+            <div class='title'>報名類型</div>
+            <div><label><input type='radio' class='join__type' name="join__type" value='bed' id='bed'>
+            躺在床上用想像力實作</label></div>
+            <div><label><input type='radio' class='join__type' name="join__type" value='floor' id='floor'>
+            趴在地上滑手機找現成的</label></div>
+            <p id='alert__jointype'></p>
+            <div class='title'>怎麼知道這個活動的？</div> 
+            <input type='text' class='input' name='reason' placeholder='您的回答'>
+            <p id='alert__reason'></p>
+            <div class='title' id='other'>其他</div>
+            <div>對活動的一些建議</div> 
+            <input type='text' id ='other__input' class='input' name='other' placeholder='您的回答'>
+        <div>
+            <button class='button'>提交</button>
+        </div>
+        <div>請勿透過表單送出您的密碼。</div>
+        </form>
+    </div>
+    <footer>
+        <div class='footer'>
+            © 2020 © Copyright. All rights Reserved.
+        </div>
+    </footer>
+    <script src='script.js'></script>
+</body>
+
+</html>
