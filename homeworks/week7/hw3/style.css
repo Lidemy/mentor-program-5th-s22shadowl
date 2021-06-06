@@ -1,0 +1,100 @@
+h1 {
+    color: #0080ff;
+    font-size: 48px;
+    text-align: center;
+}
+body {
+    background-color: #f0f0f0;
+    font-family:Microsoft JhengHei;
+    line-height: 1.5em;
+}
+#add__inputbox {
+    background-color:transparent;
+    border: none;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+}
+.button {
+    background-color: #f0f0f0;
+    box-shadow: 1.8px 2.4px 3px 0 #97a2a0;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    min-width: 300px;
+    max-width: 316px;
+    min-height: 300px;
+    flex: 0 0 30%;
+    z-index: 2;
+}
+.button:hover::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+}
+.checked {
+    transform: translate(0px, 10px);
+    transition: transform 1s;
+    text-decoration: line-through;
+}
+icon {
+    background-color: red;
+    border-radius: 20%;
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    right:5%;
+    top:5%;
+    height: 10%;
+    width: 10%;
+}
+.todo__box {
+    border-radius: 5px;
+    border-top:#66b3ff 5px solid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: 20px;
+    min-height: 322px;
+    text-align: center;
+}
+.todo { 
+    background-color: white;
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 5% auto 5% auto;
+    padding: 15px;
+}
+.rule {
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+.todo__now {
+    font-size: 24px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+}
+#input__button {
+    order:1;
+}
+@media (max-width: 768px) {
+    .rule {
+        display: block;
+    }
+    .todo__now {
+        font-size: 16px;
+    }
+    #input__button {
+        order:-1;
+    }
+}  

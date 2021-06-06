@@ -1,0 +1,105 @@
+body {
+    background: whitesmoke;
+    font-family:Microsoft JhengHei;
+}
+h1 {
+    font-size: 36px;
+}
+p {
+    margin: 0;
+}
+form > .column__active {
+    margin-bottom:8px;
+}
+.hint__active:after {
+    content: '該欄位為必填';
+    color: #e74149;
+}
+.form {
+    font-size: 14px;
+    border-top: solid 8px gold;
+    border-radius: 5px;
+    background: white;
+    position: relative;
+    width: 645px;
+    margin:5% auto 2.5% auto;
+    padding: 40px;
+    box-shadow: 1.8px 2.4px 5px 0 #97a2a0;
+}
+.footer {
+    background: #000000;
+    padding: 12px;
+    text-align: center;
+    color:#999999;
+    font-size: 13px;
+  }
+.time__location {
+    line-height: 1.5em;
+    padding-bottom: 22px;
+  }
+.title {
+    font-size: 20px;
+    padding: 20px 0px 20px 0px;
+}
+.title:after {
+    content: ' *';
+    color: #e74149; 
+}
+#other:after {
+    content: '';
+}
+#other {
+    padding-bottom: 12px;
+}
+#other__input {
+    margin-top: 24px;
+}
+.hint {
+    font-size: 16px;
+    color:#e74149;
+    padding-bottom: 35px;
+}
+.button {
+    position: relative;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    padding: 12px 30px 12px 30px;
+    font-size: 15px;
+    background:gold;
+    display: inline-block;
+    border-radius:3px ;
+    transition: color 0.1s;
+    border:0;
+  }
+.button div {
+    position:relative;
+    z-index: 10;
+  }
+.button:hover:after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.input {
+    width:287px;
+    font-size:16px;
+    margin-bottom: 30px;
+    border: #d0d0d0 solid 1px;  
+}
+.input:nth-last-child(1) {
+    margin-top:24px
+}
+.join-type  {
+    margin-bottom: 22px;
+}
+
+@media (max-width: 768px) {
+    .form {
+        width:auto;
+        margin: 10px;
+    }
+}
