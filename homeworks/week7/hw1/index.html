@@ -1,4 +1,4 @@
-ㄈ<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -6,7 +6,7 @@
 
   <title>新拖延運動報名表單</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'> 
-  <link rel='stylesheet' herf='https://necolas.github.io/normalize.css/8.0.1/normalize.css' />
+  <link rel='stylesheet' href='https://necolas.github.io/normalize.css/8.0.1/normalize.css' />
 
   <style type='text/css'>
     @import url(style.css);
@@ -30,8 +30,8 @@
             <input type='text' class='input' name='email' placeholder='您的電子郵件'>
             <p id='alert__email'></p>
             <div class='title'>手機號碼</div>
-            <input type='text' class='input' name='number' placeholder='您的手機號碼'>
-            <p id='alert__number'></p>
+            <input type='text' class='input' name='tel' placeholder='您的手機號碼'>
+            <p id='alert__tel'></p>
             <div class='title'>報名類型</div>
             <div><label><input type='radio' class='join__type' name="join__type" value='bed' id='bed'>
             躺在床上用想像力實作</label></div>
@@ -43,7 +43,7 @@
             <p id='alert__reason'></p>
             <div class='title' id='other'>其他</div>
             <div>對活動的一些建議</div> 
-            <input type='text' id ='other__input' class='input' name='other' placeholder='您的回答'>
+            <input type='text' data-inputtype='other' class='input' name='other' placeholder='您的回答'>
         <div>
             <button class='button'>提交</button>
         </div>

@@ -48,8 +48,8 @@ form > .column__active {
 #other:after {
     content: '';
 }
-#other {
-    padding-bottom: 12px;
+[data-inputtype='other'] {
+    margin-top: 12px;
 }
 #other__input {
     margin-top: 24px;
