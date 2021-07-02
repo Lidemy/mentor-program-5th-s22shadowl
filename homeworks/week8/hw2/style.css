@@ -14,9 +14,6 @@ span {
     bottom:0%;
     color: white;
 }
-.tens {
-    left: 2%;
-}
 .game__bar::before {
     content: '熱門遊戲';
     font-weight: bold;
@@ -30,7 +27,9 @@ span {
     font-size: 90px;
     color: white;
     top:-10%;
-    left: 5%;
+    width:140px;
+    text-align: center;
+    left: 3%;
     z-index: -1;
 }
 .game__bar {
