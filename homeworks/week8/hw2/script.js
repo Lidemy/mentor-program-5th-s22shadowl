@@ -48,17 +48,10 @@ function getStreams(game, limit) { // 取得指定遊戲的實況
       for (let i = 0; i < limit; i++) {
         const nowStream = document.createElement('div')
         nowStream.classList.add('stream__object')
-        if (i >= 9) { // 分開處理個位數跟十位數的排版，但覺得寫得不太好
-          nowStream.innerHTML = `<a href='${streamResult.streams[i].channel.url}' target='_blank'><div class='streams__img'><img src='${streamResult.streams[i].preview.medium}'></div>
-                              <span class='tens'>${i + 1}</span>
-                              <div class='streams__name'>${streamResult.streams[i].channel.display_name}: ${streamResult.streams[i].viewers} viewers</div>
-                              <div class='streams__title'>${streamResult.streams[i].channel.status}</div></a>`
-        } else {
-          nowStream.innerHTML = `<a href='${streamResult.streams[i].channel.url}' target='_blank'><div class='streams__img'><img src='${streamResult.streams[i].preview.medium}'></div>
+        nowStream.innerHTML = `<a href='${streamResult.streams[i].channel.url}' target='_blank'><div class='streams__img'><img src='${streamResult.streams[i].preview.medium}'></div>
                               <span>${i + 1}</span>
                               <div class='streams__name'>${streamResult.streams[i].channel.display_name}: ${streamResult.streams[i].viewers} viewers</div>
                               <div class='streams__title'>${streamResult.streams[i].channel.status}</div></a>`
-        }
         document.querySelector('.streams').appendChild(nowStream)
       }
       const emptyBox = document.createElement('div')
