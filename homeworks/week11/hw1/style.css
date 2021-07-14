@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    background:#fcfce3;
+    color: #800000;
+    
+}
+.warning {
+    background: #ffc4c6;
+    color:#a20606;
+    padding: 10px;
+    text-align: center;
+}
+.error {
+    color: #a20606;
+}
+.bar {
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 150px;
+    height: 100vh;
+    border-right: 1px solid black;
+}
+.bar__title {
+    margin: 50px 10px 10px 10px;
+    color: #C00;
+}
+.board {
+    width: calc(100vw - 150px);
+    margin: 0 0 5vh 133px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.board__title {
+    text-align: center;
+}
+.board__href {
+    text-align: right;
+}
+.board__new-comment-form {
+    text-align: center;
+}
+textarea{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #c2dffb;
+    box-sizing: border-box;
+}
+table {
+    margin: 0 auto;
+    text-align: left;
+}
+tr > td:first-of-type {
+    background-color: #ea8;
+    width: 70px;
+    font-weight: bold;
+}
+.board__nickname {
+    margin: 10px;
+}
+.board__nickname input {
+    border: 1px solid #c2dffb;
+    padding: 5px;
+}
+.board__submit-btn {
+    padding: 3px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    color: black;
+}
+.board__hr {
+    margin: 20px auto;
+    height: 2px;
+    max-width: 95%;
+}
+.card {
+    margin: 20px 0;
+    min-height: 70px;
+    box-sizing: border-box;
+    display: flex;
+    word-break: break-all;
+}
+.card__avatar {
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.card__body {
+    padding: 10px;
+    background-color: #F0E0D6;
+}
+.card__content {
+    margin-top: 10px;
+    max-width: 100%;
+    white-space: pre-line;
+}
+.card__title {
+    font-weight: bold;
+    color: #cc1105;
+    font-size: 1.125em;
+}
+.card__author {
+    font-weight: bold;
+    color: #117743;
+}
+.login__hint {
+    text-align: center;
+    width: 100%;
+}
+.hide {
+    display: none;
+}
+.edit-nickname-btn, .update__comments-btn, .delete__comments-btn {
+    color: blue;
+    text-decoration: underline;
+}
+.board__submit {
+    text-align: center;
+}
+.table td {
+    min-width: 150px;
+    text-align: center;
+    border: 1px solid black;
+}
+.admin-page {
+    text-align: center;
+}

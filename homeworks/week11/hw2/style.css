@@ -1,0 +1,242 @@
+body {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+input, textarea, select {
+    border: none;
+    padding: 3px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+}
+.board__login input {
+    background-color: white;
+    color: black;
+}
+.board__login .btn {
+    margin-top: -5px;
+}
+select {
+    margin-right: 10px;
+}
+.hide {
+    display: none;
+}
+.article {
+    width: 50vw;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.card .card__body {
+    position: relative;
+    background-color: white;
+    color: black;
+    width: 20vw;
+    height: 5rem;
+    padding: 10px;
+    margin: 10px;
+}
+.board__comments {
+    display: flex;
+    border-bottom: 5px solid white;
+    border-top: 5px solid white;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.card:nth-child(odd) {
+    margin-top: 30vh;
+    margin-bottom: 5vh;
+    margin-left: -5vw;
+}
+.card:nth-child(even) {
+    margin-top: 5vh;
+    margin-bottom: 30vh;
+    margin-left: -5vw;
+}
+.board__comments .card:first-child {
+    margin-left: 5vw;
+}
+
+.card__content {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box; 
+    -webkit-box-orient:vertical; 
+    -webkit-line-clamp:2;
+}
+.card__title {
+    font-weight: bold;
+}
+.card__body:hover {
+    transform: scale(1.1, 1.1);
+    transition: transform 1s;
+}
+
+.btn {
+    position: absolute;
+    margin:5px;
+    padding:5px;
+    color: black;
+    background-color: white;
+    text-decoration: unset;
+    font-size: 1.2rem;
+}
+.left {
+    left: 1vw;
+}
+.right {
+    right:1vw;
+}
+form .submit-article {
+    margin-top: 0;
+    right:-4vw;
+    border: none;
+    top:0px;
+}
+div div .admin {
+    margin-top: 0;
+    left:-4vw;
+    top:0px;
+}
+.article .right {
+    color: white;
+    background-color: black;
+    margin: 13px;
+}
+.article .left {
+    left: -5vw;
+}
+.article div {
+    background-color: white;
+    color: black;
+    box-sizing:content-box;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+}
+.article__title {
+    font-size: 2rem;
+}
+.article__title .btn {
+    margin-top: 0;
+}
+.article__time {
+    font-size: 1rem;
+}
+.article__content {
+    height: 80vh;
+    font-size: 1.25rem;
+}
+.article__content div {
+    margin-top: 0;
+}
+.card__info .right {
+    margin: 0;
+}
+.board__header {
+    height: 6vh;
+}
+.board__title {
+    line-height: 5vh;
+    font-size: 1.25rem;
+}
+.board__panel {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 33% 66%;
+    grid-template-rows: 35% 65%;
+    height: 50vh;
+    width: 50vw;
+    min-height: 415px;
+    min-width: 715px;
+    margin: 5vh auto;
+    grid-template-areas:
+    "a b"
+    "c d";
+}
+.board__panel > div {
+    background-color: white;
+    color: black;
+    margin: 5px;
+    padding: 10px;
+}
+.user__brief {
+    grid-area: a;
+    display: flex;
+    position: relative;
+}
+.user__info{
+    grid-area: c;
+}
+.user__new__article {
+    grid-area: b;
+    display: flex;
+    position: relative;
+}
+.user__links {
+    grid-area: d;
+    text-align: right;
+}
+.board__panel > div > div {
+    margin: 10px;
+}
+.user__photo {
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.user__account {
+    margin: 5px;
+}
+.update__user__aboutme {
+    width: 59vw;
+}
+form .input__title, form .input__content {
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+.input__content {
+    height: 75%;
+}
+.list__articles {
+    overflow: auto;
+}
+.input {
+    flex-grow: 1;
+}
+.admin__panel {
+    position: relative;
+    margin: 5vh auto;
+    width: 60vw;
+    background-color: white;
+    color: black;
+    text-align: left;
+    padding: 10px;
+}
+.admin__panel div {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+}
+.admin__panel .btn {
+    left: -5vw;
+    margin-top: 0;
+}
+.admin__panel form .btn {
+    background-color: white;
+    color: black;
+}
