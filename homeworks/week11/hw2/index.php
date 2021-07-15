@@ -112,7 +112,7 @@
         <div class='board__panel'>
             <div class='user__brief'>
             <?php
-            $stmt = $conn->prepare("select " .
+            $stmt = $conn->prepare('select ' .
                             'nickname, ' .
                             'username, '.
                             'photo_url, '.
@@ -126,12 +126,14 @@
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
             ?>
-                <img class='user__photo' src='<?php echo escpape($row['photo_url']) ?>'>
+                <img class='user__photo' src='<?php echo escape($row['photo_url']) ?>'>
                 <div class='user__account'>
                     <div><?php echo escape($row['nickname']); ?></div>
                     <div>@<?php echo escape($row['username']) ?></div>
                 </div>
-                <span class='admin btn'><a href="admin.php">後台</a></span>                
+                <?php if ($user) { ?>
+                <span class='admin btn'><a href="admin.php">後台</a></span>
+                <?php } ?>                
             </div>
             <div class='user__info'>
                 <div>關於我： <?php echo escape($row['about_me']); ?></div>
