@@ -88,21 +88,22 @@
     </main>
     </body> 
     <script> 
-        function showUpdateuserBox(updateButton, updateDiv) {
-            document.querySelector(updateButton).addEventListener('click', function(e) {
-            document.querySelector(updateDiv).classList.remove('hide')
-            document.querySelector(updateButton).classList.add('hide')
+        function showUpdateuserBox(updateRow) {
+            document.querySelector(`.update__${updateRow}`).addEventListener('click', function(e) {
+                document.querySelector(`.card__update__${updateRow}`).classList.remove('hide')
+                document.querySelector(`.user__${updateRow}`).classList.add('hide')
             })
         }
-        showUpdateuserBox('.update__nickname', '.card__update__nickname')
-        showUpdateuserbox('.update__password', '.card__update__password')
-        showUpdateuserBox('.update__aboutme', '.card__update__aboutme')
-        showUpdateuserBox('.update__photo', '.card__update__photo')
+            showUpdateuserBox('nickname')
+            showUpdateuserBox('password')
+            showUpdateuserBox('aboutme')
+            showUpdateuserBox('photo')
+
         document.querySelector('.update__user__password__btn').addEventListener('click', function(e) {
             if (document.querySelector('update__password').value !== document.querySelector('.update__passwordcheck').value ) {
               e.preventDeafault()
               alert('輸入的密碼不相同')  
             } 
-        }
+        })
 </script>
 </html>
