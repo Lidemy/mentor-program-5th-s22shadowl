@@ -15,13 +15,13 @@
     $articles_per_page = 5;
     $offset = ($page -1) * $articles_per_page;
 
-    $stmt = $conn->prepare("select " .
+    $stmt = $conn->prepare("SELECT " .
                             'id, '. 
                             'content, ' .
                             'title ' .
-                            'from s22shadowl_blog_articles '.
-                            'where is_deleted IS NULL '.
-                            'order by id desc '.
+                            'FROM s22shadowl_blog_articles '.
+                            'WHERE is_deleted IS NULL '.
+                            'ORDER BY id desc '.
                             'limit ? offset ? '
                         );
 

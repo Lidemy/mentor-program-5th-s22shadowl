@@ -13,7 +13,7 @@
   $content = $_POST['content'];
   $title = $_POST['title'];
 
-  $sql = sprintf("insert into s22shadowl_board_comments(username, nickname, title, content) values(?, ?, ?, ?)");
+  $sql = sprintf("INSERT INTO s22shadowl_board_comments(username, nickname, title, content) VALUES(?, ?, ?, ?)");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('ssss', $username, $nickname, $title, $content);
   $result = $stmt->execute();

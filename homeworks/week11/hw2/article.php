@@ -9,7 +9,7 @@
       }
 
     $id = $_GET['id'];
-    $stmt = $conn->prepare("select title, id, content, created_at from s22shadowl_blog_articles where id=?");
+    $stmt = $conn->prepare("SELECT title, id, content, created_at FROM s22shadowl_blog_articles WHERE id=?");
     $stmt->bind_param('i', $id);
     $result = $stmt->execute();
     if(!$result) {
@@ -50,7 +50,7 @@
                         <a class='delete__articles right btn' href='delete_article.php?id=<?php echo escape($row['id']); ?>'>刪除</a>
                         <span class='update__title left btn'>編輯</span>
                 <?php } ?> 
-                <?php echo $row['title']; ?>
+                <?php echo escape($row['title']); ?>
             </div>
             <div class='hide card__update__title'>
             <form method='POST' action='handle_update_article.php?id=<?php echo $row['id']?>'>

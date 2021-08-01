@@ -20,7 +20,7 @@ if ( $user['authority'] != 1 ) {
   $authorityuser = 'authority' . $id;
   $authority = $_POST['authority' . $id];
 
-  $sql = "update s22shadowl_board_users set authority=? where id=?";
+  $sql = "UPDATE s22shadowl_board_users SET authority=? WHERE id=?";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('ii', $authority, $id);
   $result = $stmt->execute();

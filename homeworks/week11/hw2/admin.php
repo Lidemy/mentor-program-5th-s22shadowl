@@ -8,7 +8,7 @@
     }
 
     $stmt = $conn->prepare(
-    "select * from s22shadowl_blog_users order by id desc "
+    "SELECT * FROM s22shadowl_blog_users ORDER BY id DESC "
     );
     $result = $stmt->execute();
     if(!$result) {
@@ -63,7 +63,7 @@
                     </form>
                 </div>
 
-                <div class='user__aboutme'>關於我：<?php echo $row['about_me']; ?> 
+                <div class='user__aboutme'>關於我：<?php echo escape($row['about_me']); ?> 
                     <span class='update__aboutme left btn'>編輯</span>
                 </div>
 

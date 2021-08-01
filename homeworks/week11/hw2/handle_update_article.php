@@ -19,12 +19,12 @@
   $title = $_POST['title'];
 
   if ($_POST['title']) {
-    $sql = "update s22shadowl_blog_articles set title=? where id=?";
+    $sql = "UPDATE s22shadowl_blog_articles SET title=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('si', $title, $id);
   } 
   if ($_POST['content']) {
-    $sql = "update s22shadowl_blog_articles set content=? where id=?";
+    $sql = "UPDATE s22shadowl_blog_articles SET content=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('si', $content, $id);
   }

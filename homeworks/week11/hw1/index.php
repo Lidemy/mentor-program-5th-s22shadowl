@@ -19,18 +19,18 @@
     $articles_per_page = 5;
     $offset = ($page -1) * $articles_per_page;
 
-    $stmt = $conn->prepare("select " .
-                            'C.id as id, '. 
-                            'C.content as content, ' .
-                            'C.title as title, ' .
-                            'C.created_at as created_at, ' .
-                            'U.nickname as nickname, ' .
-                            'U.username as username, ' .
-                            'U.authority as authority ' .
-                            'from s22shadowl_board_comments as C '.
-                            'left join s22shadowl_board_users as U on C.username = U.username ' .
-                            'where C.is_deleted IS NULL '.
-                            'order by C.id desc '.
+    $stmt = $conn->prepare("SELECT " .
+                            'C.id AS id, '. 
+                            'C.content AS content, ' .
+                            'C.title AS title, ' .
+                            'C.created_at AS created_at, ' .
+                            'U.nickname AS nickname, ' .
+                            'U.username AS username, ' .
+                            'U.authority AS authority ' .
+                            'FROM s22shadowl_board_comments AS C '.
+                            'LEFT JOIN s22shadowl_board_users AS U ON C.username = U.username ' .
+                            'WHERE C.is_deleted IS NULL '.
+                            'ORDER BY C.id desc '.
                             'limit ? offset ? '
                         );
 
