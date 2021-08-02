@@ -8,7 +8,7 @@
     die('資料不齊全');
   }
   $id = $_GET['id'];
-    $sql = "update s22shadowl_blog_articles set is_deleted=1 where id=?";
+    $sql = "UPDATE s22shadowl_blog_articles SET is_deleted=1 WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
     $result = $stmt->execute();

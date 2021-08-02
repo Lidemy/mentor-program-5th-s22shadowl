@@ -9,7 +9,7 @@
   $username = $_POST['username'];
   $password = $_POST['password'];
   $sql = sprintf(
-    "select * from s22shadowl_board_users where username=? ");
+    "SELECT * FROM s22shadowl_board_users WHERE username=? ");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $username);
   $result = $stmt->execute();

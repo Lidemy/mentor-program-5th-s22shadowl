@@ -14,7 +14,7 @@
   $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
   $sql = sprintf(
-    "insert into s22shadowl_board_users(nickname, username, password) values(?, ?, ?)");
+    "INSERT INTO s22shadowl_board_users(nickname, username, password) VALUES(?, ?, ?)");
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('sss', $nickname, $username, $password);
   $result = $stmt->execute();

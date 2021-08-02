@@ -10,7 +10,7 @@
   $username = $_SESSION['username'];
   $nickname = $_POST['nickname'];
 
-  $sql = "update s22shadowl_board_users set nickname=? where username=?";
+  $sql = "UPDATE s22shadowl_board_users SET nickname=? WHERE username=?";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('ss', $nickname, $username);
   $result = $stmt->execute();

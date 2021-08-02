@@ -22,7 +22,7 @@
     $offset = ($page -1) * $articles_per_page;
 
     $stmt = $conn->prepare(
-    "select username, authority, id from s22shadowl_board_users order by id desc ".
+    "SELECT username, authority, id FROM s22shadowl_board_users ORDER BY id DESC ".
     "limit ? offset ? "
     );
     $stmt->bind_param('ii', $articles_per_page, $offset);

@@ -12,11 +12,11 @@
   }
   $id = $_GET['id'];
   if ($user['authority'] == 1) {
-    $sql = "update s22shadowl_board_comments set is_deleted=1 where id=?";
+    $sql = "UPDATE s22shadowl_board_comments SET is_deleted=1 WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);  
   } else {
-    $sql = "update s22shadowl_board_comments set is_deleted=1 where id=? and username=?";
+    $sql = "UPDATE s22shadowl_board_comments SET is_deleted=1 WHERE id=? AND username=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('is', $id, $username);
   }

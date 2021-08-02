@@ -15,11 +15,11 @@
   $title = $_POST['title'];
 
   if ($user['authority'] == 1) {
-    $sql = "update s22shadowl_board_comments set content=?, title=? where id=?";
+    $sql = "UPDATE s22shadowl_board_comments SET content=?, title=? WHERE id=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssi', $content, $title, $id);
   } else {
-    $sql = "update s22shadowl_board_comments set content=?, title=? where id=? and username=?";
+    $sql = "UPDATE s22shadowl_board_comments SET content=?, title=? WHERE id=? AND username=?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('ssis', $content, $title, $id, $username);
   }
