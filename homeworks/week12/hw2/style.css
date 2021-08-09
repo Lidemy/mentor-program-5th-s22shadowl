@@ -1,0 +1,18 @@
+.card {
+    width: 20vw;
+    height: 20vw;
+    min-width: 20vw;
+    min-height: 20vw;
+}
+.cards {
+    height: 75vh;
+}
+
+button, input {
+    box-shadow: none;
+    border: none;
+}
+
+.undone {
+    opacity:0.5;
+}

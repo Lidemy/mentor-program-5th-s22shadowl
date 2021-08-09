@@ -28,23 +28,3 @@ document.querySelector('.todo__box').addEventListener('click', (e) => { // 標�
     clickedButton.classList.toggle('checked')
   }
 })
-/* 舊寫法留著做紀念
-  document.getElementById('add__icon').addEventListener('click', () => { // 新增 todo
-  const text = document.querySelector('input[name=add__inputbox]')
-  console.log('1')
-  if (text.value) {
-    console.log('2')
-     const newtodo = document.createElement('button')
-    newtodo.classList.add('button')
-    newtodo.classList.add('created__button')
-    newtodo.innerHTML = `${text.value}<icon class='del__icon'>X</icon>`
-    document.querySelector('.todo__box').appendChild(newtodo)
-    const newtodo = `<button class='button created__button'>
-      ${text.value}
-      <icon class='del__icon'>X</icon>
-    </button>`
-    document.querySelector('.todo__box').innerHTML += newtodo
-    todoNow.innerText = `目前的備忘數量：${totalTodos.length}`
-    text.value = ''
-  }
-}) */
