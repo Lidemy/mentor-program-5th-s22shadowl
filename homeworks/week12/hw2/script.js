@@ -2,8 +2,8 @@ $(document).ready((e) => {
   function appendTodoToDOM(container, todos) {
     const html = `<div class='card bg-info m-2 ${todos.status}'>
         <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
-        <p class="del-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1"></p>
-        <p class=" btn btn-danger position-absolute top-0 start-0 fs-2 m-1"></p>
+        <p class="del-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1">刪除</p>
+        <p class=" btn btn-danger position-absolute top-0 start-0 fs-2 m-1">編輯</p>
         <div class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center todo-content'>${todos.content}</div>
         </button>
         </div>`
