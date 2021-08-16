@@ -1,0 +1,240 @@
+body {
+    background-color: #e0e0e0;
+    font-family:Microsoft JhengHei;
+}
+.title {
+    padding: 10px;
+    text-align: center;
+}
+
+span {
+    position: absolute;
+    font-size: 90px;
+    left: 5%;
+    bottom:0%;
+    color: white;
+}
+.game__bar::before {
+    content: '熱門遊戲';
+    font-weight: bold;
+    position: absolute;
+    font-size: 24px;
+    left: 25px;
+    top:-35px;
+}
+.game__bar span {
+    position: absolute;
+    font-size: 90px;
+    color: white;
+    top:-10%;
+    width:140px;
+    text-align: center;
+    left: 3%;
+    z-index: -1;
+}
+.game__bar {
+    position: fixed;
+    display: flex;
+    top:10%;
+    flex-direction: column;
+    max-width: 150px;
+    background-color: blueviolet;
+    margin: 5px;
+    border-radius: 5px;
+}
+.game__bar > button {
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #dcb5ff;
+    text-align: right;
+    z-index: 2;
+}
+.game__bar > button:hover{
+    background: rgba(255, 255, 255, 0.7);
+}
+.stream__box::before {
+    content: '前二十熱門的頻道';
+    font-weight: bold;
+    position: absolute;
+    top:-40px;
+    left: 0%;
+    font-size: 24px;
+    z-index: 2;
+}
+.game__list {
+    display: flex;
+    margin: 10px;
+    text-align: left;
+}
+.game__title {
+    position: relative;
+    border: none;
+    font-size: 24px;
+    min-height: 100px;
+}
+.game__img {
+    max-width: 136px;
+    max-height: 190px;
+    margin: 0 auto;
+    display: none;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+.game__now + img {
+    display: block;
+}
+.stream__box {
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction:row;
+    padding: 5px;
+    margin: 5px 150px 5px 220px;
+    border: blueviolet 5px solid;
+    background-color: blueviolet;
+    display: flex;
+    flex-grow: 1;
+    border-radius: 10px;
+
+}
+.streams {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.stream__object {
+    font-size: 18px;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    border: blueviolet 2px solid;
+    flex: 0 1 30%;
+    background-color: #dcb5ff;
+    border-radius: 10px;
+    text-align: right;
+    position: relative;
+}
+.empty__object {
+    width: 413px;
+    margin: 5px;
+}
+.streams__img {
+    padding: 40px 10px 36px 0;
+}
+.streams__img img:hover {
+    z-index: 2;
+    position: relative;    
+    transform: translateX(-50px) scale(1.43,1.51);
+    border-radius: 5px;
+}
+.stream__object:hover {
+    background: rgba(255, 255, 255, 0.7);    
+}
+.add__button {
+    background-color: #dcb5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 261px;
+}
+.add__button > button {
+    background-color:inherit;
+    font-size: 72px;
+    width: 330px;
+    border: none;
+}
+.add__button:hover {
+    background: #dcb5ff;
+}
+.streams__name {
+    padding: 10px 12px 0 0;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    width: 320px;
+    top:0%;
+    right: 0%;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.streams__title {
+    padding: 0 12px 0 0;
+    position: absolute;
+    right: 0%;
+    bottom: 5%;
+    width:320px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+a {
+    color: inherit;
+    cursor: none;
+    text-decoration: none;
+}
+@media (max-height: 800px) {
+    .game__bar {
+        position: relative;
+        max-height: 750px;
+    }    
+}
+@media (max-width: 768px) {
+    img {
+        display: none;
+    }
+    span {
+        font-size: 20px;
+        position: relative;
+        color: black;
+        left: 0%;
+    }
+    .title {
+        font-size: 12px;
+    }
+    .game__bar {
+        position: relative;
+        max-height: 550px;
+    }    
+    .stream__box {
+        margin: 5px;
+        background-color:inherit;
+        border: 0;
+    }
+    .stream__box::before {
+        top:-28px;
+        font-size: 16px;
+    }
+    .streams__img {
+        padding: 0;
+    }
+    .game__now + img {
+        display: none;
+    }
+    .streams__name {
+        font-size: 16px;
+        position: relative;
+        width: 100px;
+    }
+    .streams__title {
+        font-size: 16px;
+        position: relative;
+        width:150px;
+    }
+    .stream__object {
+        background-color: #dcb5ff;
+        text-align: left;
+        max-height: 100px;
+        max-width: 150px;
+    }
+    .stream__object:hover {
+        background: inherit;    
+    }
+    .add__button {
+        display: block;
+    }
+    .add__button > button {
+        font-size: 20px;
+        width: 150px;
+    }
+}

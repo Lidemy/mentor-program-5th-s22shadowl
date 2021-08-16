@@ -1,0 +1,246 @@
+.board__panel .user__new__article, .board__panel .user__brief {
+  display: flex;
+  position: relative;
+}
+
+.admin__panel div, body input,
+body textarea,
+body select {
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+body {
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+}
+body a {
+  text-decoration: none;
+  color: #000000;
+}
+body input,
+body textarea,
+body select {
+  border: none;
+  padding: 3px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+body select {
+  margin-right: 10px;
+}
+body .btn {
+  background-color: #ffffff;
+  color: #000000;
+  position: absolute;
+  margin: 5px;
+  padding: 5px;
+  text-decoration: unset;
+  font-size: 1.2rem;
+}
+body div div .admin {
+  margin-top: 0;
+  left: -4vw;
+  top: 0px;
+}
+body .hide {
+  display: none;
+}
+body .left {
+  left: 1vw;
+}
+.article body .left {
+  left: -5vw;
+}
+body .right {
+  right: 1vw;
+}
+.article body .right {
+  background-color: #000000;
+  color: #ffffff;
+  margin: 13px;
+}
+.card__info body .right {
+  margin: 0;
+}
+body form .input__title, body form .input__content {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+}
+body form .submit-article {
+  margin-top: 0;
+  right: -4vw;
+  border: none;
+  top: 0px;
+}
+body form .input__content {
+  height: 75%;
+}
+body .input {
+  flex-grow: 1;
+}
+
+.admin__panel {
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+  margin: 5vh auto;
+  width: 60vw;
+  text-align: left;
+  padding: 10px;
+}
+.admin__panel div {
+  margin-bottom: 2rem;
+  padding: 10px;
+}
+.admin__panel .btn {
+  left: -5vw;
+  margin-top: 0;
+}
+.admin__panel form .btn {
+  background-color: #ffffff;
+  color: #000000;
+}
+.admin__panel .update__user__aboutme {
+  width: 59vw;
+}
+
+.article {
+  width: 50vw;
+  margin: 5vh auto;
+  position: relative;
+}
+.article div {
+  background-color: #ffffff;
+  color: #000000;
+  box-sizing: content-box;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+}
+.article__title {
+  font-size: 2rem;
+}
+.article__title .btn {
+  margin-top: 0;
+}
+.article__time {
+  font-size: 1rem;
+}
+.article__content {
+  height: 80vh;
+  font-size: 1.25rem;
+}
+.article__content div {
+  margin-top: 0;
+}
+
+.board__header {
+  height: 6vh;
+}
+.board__header .board__title {
+  line-height: 5vh;
+  font-size: 1.25rem;
+}
+.board__comments {
+  display: flex;
+  border-bottom: 5px solid #ffffff;
+  border-top: 5px solid #ffffff;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.board__comments .card:nth-child(1) {
+  margin-left: 5vw;
+}
+.board__comments .card:nth-child(odd) {
+  margin-top: 30vh;
+  margin-bottom: 5vh;
+  margin-left: -5vw;
+}
+.board__comments .card:nth-child(even) {
+  margin-bottom: 30vh;
+  margin-top: 5vh;
+  margin-left: -5vw;
+}
+.board__comments .card__body {
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  width: 20vw;
+  height: 5rem;
+  padding: 10px;
+  margin: 10px;
+}
+.board__comments .card__body:hover {
+  transform: scale(1.1, 1.1);
+  transition: transform 1s;
+}
+.board__comments .card__content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.board__comments .card__title {
+  font-weight: bold;
+}
+.board__login input {
+  background-color: #ffffff;
+  color: #000000;
+}
+.board__login .btn {
+  margin-top: -5px;
+}
+.board__panel {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 33% 66%;
+  grid-template-rows: 35% 65%;
+  height: 50vh;
+  width: 50vw;
+  min-height: 415px;
+  min-width: 715px;
+  margin: 5vh auto;
+  grid-template-areas: "a b" "c d";
+}
+.board__panel > div {
+  background-color: #ffffff;
+  color: #000000;
+  margin: 5px;
+  padding: 10px;
+}
+.board__panel > div > div {
+  margin: 10px;
+}
+.board__panel .user__brief {
+  grid-area: a;
+}
+.board__panel .user__info {
+  grid-area: c;
+}
+.board__panel .user__new__article {
+  grid-area: b;
+}
+.board__panel .user__links {
+  grid-area: d;
+  text-align: right;
+}
+.board__panel .user__links .list__articles {
+  overflow: auto;
+}
+.board__panel .user__photo {
+  height: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.board__panel .user__account {
+  margin: 5px;
+}
+
+/*# sourceMappingURL=newstyle.css.map */
