@@ -1,12 +1,23 @@
+const todoTemplate = `<div class='card bg-info m-2 {status}'>
+                        <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
+                          <p class="del-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1">刪除</p>
+                          <p class=" edit-btn btn btn-danger position-absolute top-0 start-0 fs-2 m-1">編輯</p>
+                          <div class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center todo-content'>{content}</div>
+                        </button>
+                      </div>`
+
+const todoEditTemplate = `<div class='card bg-info m-2 input-todo'>
+                            <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
+                                <p class="{btn-for} btn btn-danger position-absolute top-0 end-0 fs-2 m-1">{btn-text}</p>
+                                <input type='text' class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center {class}' name='{name}' placeholder='{placeholder}'>
+                            </button>
+                          </div>`
+
 $(document).ready((e) => {
   function appendTodoToDOM(container, todos) {
-    const html = `<div class='card bg-info m-2 ${todos.status}'>
-        <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
-        <p class="del-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1">刪除</p>
-        <p class=" btn btn-danger position-absolute top-0 start-0 fs-2 m-1">編輯</p>
-        <div class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center todo-content'>${todos.content}</div>
-        </button>
-        </div>`
+    const html = todoTemplate
+      .replace('{status}', todos.status)
+      .replace('{content}', todos.content)
     container.append(html)
   }
   // 在 JS 取得 uid 參數、讀取待辦
@@ -22,7 +33,6 @@ $(document).ready((e) => {
       }
     }
   }
-  console.log(uid)
   if (uid) {
     $.ajax({
       url: `http://mentor-program.co/mtr04group1/s22shadowl/week12/todos/api_todos.php?uid=${uid}`
@@ -41,14 +51,10 @@ $(document).ready((e) => {
   $('.add-btn').click((e) => {
     const addContent = $('input[name=add-content]').val()
     if (addContent) {
-      const todoTemplate = `<div class='card bg-info m-2'>
-                                        <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
-                                            <p class="del-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1">刪除</p>
-                                            <p class=" edit-btn btn btn-danger position-absolute top-0 start-0 fs-2 m-1">編輯</p>
-                                            <div class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center todo-content'>${addContent}</div>
-                                        </button>
-                                    </div>`
-      $('.cards').append(todoTemplate)
+      const todo = todoTemplate
+        .replace('{status}', '')
+        .replace('{content}', addContent)
+      $('.cards').append(todo)
     }
   })
   // 動態新增：編輯、刪除、編輯完成、修改狀態
@@ -58,21 +64,17 @@ $(document).ready((e) => {
   $(document).on('click', '.edit-btn', (e) => {
     const editTodo = e.target.closest('.card')
     const editTodotext = $(editTodo).find('.todo-content').text()
-    $(editTodo).html(`
-        <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
-            <p class="del-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1">刪除</p>
-            <p class="edit-btn-done btn btn-danger position-absolute top-0 start-0 fs-2 m-1">完成</p>
-            <input type='text' class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center edit-todo' name='add-content' placeholder='${editTodotext}'>
-        </button>`)
+    $(editTodo).prop('outerHTML', todoEditTemplate
+      .replace('{placeholder}', editTodotext)
+      .replace('{class}', 'edit-todo')
+      .replace('{btn-for}', 'edit-btn-done')
+      .replace('{btn-text}', '完成'))
   })
   $(document).on('click', '.edit-btn-done', (e) => {
     const editTodo = e.target.closest('.card')
-    $(editTodo).html(`
-        <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
-            <p class="del-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1">刪除</p>
-            <p class="edit-btn btn btn-danger position-absolute top-0 start-0 fs-2 m-1">編輯</p>
-            <div class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center todo-content'>${$('.edit-todo').val()}</div>
-        </button>`)
+    const editTodotext = $('.edit-todo').val()
+    $(editTodo).prop('outerHTML', todoTemplate
+      .replace('{content}', editTodotext))
   })
   $(document).on('dblclick', '.card', (e) => {
     const undoneTodo = e.target.closest('.card')
@@ -92,28 +94,28 @@ $(document).ready((e) => {
     $('.card').show()
   })
   $('.clear-btn').click((e) => {
-    $('.cards').html(
-            `<div class='card bg-info m-2 input-todo'>
-                <button type='button' id='input__button' class='todo bg-info d-flex h-100'>
-                    <p class="add-btn btn btn-danger position-absolute top-0 end-0 fs-2 m-1">新增</p>
-                    <input type='text' class='bg-info text-center my-auto text-danger fs-3 w-100 align-self-center' name='add-content' placeholder='Add Some Todo!'>
-                </button>
-            </div>`)
+    $('.cards').html(todoEditTemplate
+      .replace('{placeholder}', 'ADD SOME TODO NOW')
+      .replace('{btn-for}', 'add-btn')
+      .replace('{name}', 'add-content')
+      .replace('{btn-text}', '新增'))
   })
   $('.save-btn').click((e) => {
     const todos = $('.card')
     const savedTodos = []
     const savedUid = (uid) || $('.uid').text()
 
-    for (let i = 1; i < todos.length; i++) {
-      let todoStatus = null
-      if ($(todos[i]).hasClass('undone')) {
-        todoStatus = 'undone'
+    for (const todo of todos) {
+      if (!($(todo).hasClass('input-todo'))) {
+        let todoStatus = null
+        if ($(todo).hasClass('undone')) {
+          todoStatus = 'undone'
+        }
+        savedTodos.push({
+          content: $(todo).find('.todo-content').text().trim(),
+          status: todoStatus
+        })
       }
-      savedTodos.push({
-        content: $(todos[i]).find('.todo-content').text().trim(),
-        status: todoStatus
-      })
     }
     const savedData = {
       uid: savedUid,
