@@ -1,4 +1,12 @@
 module.exports = {
+  settings: {    
+    // 解決 Unable to resolve path to module    
+    'import/resolver': {
+      node: {        
+	extensions: allExtensions,
+      },
+    },
+  },
   env: {
     browser: true,
     es6: true,

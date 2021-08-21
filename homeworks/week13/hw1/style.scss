@@ -1,0 +1,267 @@
+$color-main: #000000;
+$color-sub: #ffffff;
+$margin-padding-1: 5px;
+$margin-padding-2: $margin-padding-1 * 2;
+$view-height-1: 5vh;
+$view-width-1: 5vw;
+
+%display-flex {
+    display: flex;
+    position: relative;
+}
+%box-set-1 {
+    font-size: 1.2rem;
+    color: $color-sub;
+    background-color: $color-main;
+}
+
+@mixin setBgcolorFontcolor ($bg-color) {
+    background-color: if( $bg-color == $color-main , $color-main, $color-sub);
+    color: if( $bg-color == $color-main, $color-sub, $color-main);
+}
+
+body {
+    text-align: center;
+    @include setBgcolorFontcolor($color-main);
+    a {
+        text-decoration: none;
+        color: $color-main;
+    }
+    input,
+    textarea,
+    select {
+        border: none;
+        padding: 3px;
+        margin-bottom: $margin-padding-2;
+        box-sizing: border-box;
+        @extend %box-set-1;
+    }
+    select {
+        margin-right: $margin-padding-2;
+    }
+    .btn {
+        @include setBgcolorFontcolor($color-sub);
+        position: absolute;
+        margin: $margin-padding-1;
+        padding: $margin-padding-1;
+        text-decoration: unset;
+        font-size: 1.2rem;
+    }
+    div div .admin {
+        margin-top: 0;
+        left:-4vw;
+        top:0px;
+    }
+    .hide {
+        display: none;
+    }
+    .left {
+        left: 1vw;
+        .article & {
+            left: -1 * $view-width-1;
+        }
+    }
+    .right {
+        right:1vw;
+        .article & {
+            @include setBgcolorFontcolor($color-main);
+            margin: 13px;
+        }
+        .card__info & {
+            margin: 0;
+        }
+    }
+    
+    form {
+        .input__title, .input__content {
+            width: 100%;
+            @include setBgcolorFontcolor($color-main);
+        }
+        .submit-article {
+            margin-top: 0;
+            right:-4vw;
+            border: none;
+            top:0px;
+        }
+    
+        .input__content {
+            height: 75%;
+        }
+    } 
+    .input {
+        flex-grow: 1;
+    }
+}
+
+.admin__panel {
+    @include setBgcolorFontcolor($color-sub);
+    position: relative;
+    margin: $view-height-1 auto;
+    width: 60vw;
+    text-align: left;
+    padding: $margin-padding-2;
+    div {
+        @extend %box-set-1;
+        margin-bottom: 2rem;
+        padding: $margin-padding-2;
+    }
+    .btn {
+        left: -1 * $view-width-1;
+        margin-top: 0;
+    }
+    form .btn {
+        @include setBgcolorFontcolor($color-sub);
+    }
+    .update__user__aboutme {
+        width: 59vw;
+    }
+}
+.article {
+    width: 50vw;
+    margin: $view-height-1 auto;
+    position: relative;
+    div {
+        @include setBgcolorFontcolor($color-sub);
+        box-sizing:content-box;
+        padding: $margin-padding-2;
+        margin: $margin-padding-2 0;
+        text-align: left;
+    }
+    &__title {
+        font-size: 2rem;
+        .btn {
+            margin-top: 0;
+        }
+    }
+
+    &__time {
+        font-size: 1rem;
+    }
+    &__content {
+        height: 80vh;
+        font-size: 1.25rem;
+        div {
+            margin-top: 0;
+        }
+    }
+
+}
+.board {
+    &__header {
+        height: 6vh;
+        .board__title {
+            line-height: $view-height-1;
+            font-size: 1.25rem;
+        }
+    }
+    
+    &__comments {
+        display: flex;
+        border-bottom: $margin-padding-1 solid $color-sub;
+        border-top: $margin-padding-1 solid $color-sub;
+        text-align: left;
+        margin-bottom: 5px;
+        .card {
+            $n-child: 1, 'odd', 'even';
+            &:nth-child(#{nth($n-child, 1)}) {
+                margin-left: $view-width-1;
+            }
+            &:nth-child(#{nth($n-child, 2)}) {
+                margin-top: 30vh;
+                margin-bottom: $view-height-1;
+                margin-left: -1 * $view-width-1;
+            }
+            &:nth-child(#{nth($n-child, 3)}) {
+                margin-bottom: 30vh;
+                margin-top: $view-height-1;
+                margin-left: -1 * $view-width-1;
+            }
+            &__body {
+                position: relative;
+                @include setBgcolorFontcolor($color-sub);
+                width: 20vw;
+                height: 5rem;
+                padding: $margin-padding-2;
+                margin: $margin-padding-2;
+    
+                &:hover {
+                    transform: scale(1.1, 1.1);
+                    transition: transform 1s;
+                }
+            }
+            &__content {
+                overflow:hidden;
+                text-overflow:ellipsis;
+                display: -webkit-box; 
+                -webkit-box-orient:vertical; 
+                -webkit-line-clamp:2;
+            }
+            &__title {
+                font-weight: bold;
+            }
+        }
+    }
+    &__login {
+        input {
+            @include setBgcolorFontcolor($color-sub);
+        }
+        .btn {
+            margin-top: -5px;
+        }
+    }
+    &__panel {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 33% 66%;
+        grid-template-rows: 35% 65%;
+        height: 50vh;
+        width: 50vw;
+        min-height: 415px;
+        min-width: 715px;
+        margin: $view-height-1 auto;
+        grid-template-areas:
+        "a b"
+        "c d";
+        > div {
+            @include setBgcolorFontcolor($color-sub);
+            margin: $margin-padding-1;
+            padding: $margin-padding-2;
+    
+            > div {
+                margin: $margin-padding-2;
+            }
+        }
+        .user {
+            &__brief {
+                grid-area: a;
+                @extend %display-flex;
+            }
+            &__info{
+                grid-area: c;
+            }
+            &__new__article {
+                grid-area: b;
+                @extend %display-flex;
+            }
+            &__links {
+                grid-area: d;
+                text-align: right;
+                .list__articles {
+                    overflow: auto;
+                }
+            }
+            &__photo {
+                height: 100%;
+                padding: $margin-padding-1;
+                box-sizing: border-box;
+                border: 1px solid $color-main;
+                border-radius: $margin-padding-1;
+            }
+            &__account {
+                margin: $margin-padding-1;
+            }
+        }
+        
+    } 
+}
+
