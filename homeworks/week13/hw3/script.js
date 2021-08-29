@@ -12,12 +12,13 @@ let nowGames = ''
 let nowStreams = 20
 
 window.onload = function() { // 載入起始畫面
-  LoadStreams()
+  loadStreams()
 }
 
-async function LoadStreams() { // 取得熱門遊戲，載入最熱門遊戲的實況
+async function loadStreams() { // 取得熱門遊戲，載入最熱門遊戲的實況
   try {
     const data = await getHotGames()
+    await getStreams(data.top[0].game.name, 20)
     await appendGameListToDOM(data)
   } catch (err) {
     console.log('錯誤！', err)
@@ -28,7 +29,6 @@ async function getHotGames() {
   try {
     const response = await fetch('https://api.twitch.tv/kraken/games/top', fetchParams)
     const data = await response.json()
-    getStreams(data.top[0].game.name, 20)
     return data
   } catch (err) {
     console.log('錯誤！', err)
